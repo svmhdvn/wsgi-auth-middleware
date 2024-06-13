@@ -1,0 +1,63 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "wsgi-auth-pam"
+dynamic = ["version"]
+description = 'WSGI middleware using an HTTP authentication frontend with a PAM backend'
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+keywords = []
+authors = [
+  { name = "Siva Mahadevan", email = "me@svmhdvn.name" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = [
+  "python-pam >= 2.0.2"
+]
+
+[project.urls]
+Documentation = "https://github.com/svmhdvn/wsgi-auth-pam#readme"
+Issues = "https://github.com/svmhdvn/wsgi-auth-pam/issues"
+Source = "https://github.com/svmhdvn/wsgi-auth-pam"
+
+[tool.hatch.version]
+path = "src/wsgi_auth_pam/__about__.py"
+
+[tool.hatch.envs.types]
+extra-dependencies = [
+  "mypy>=1.0.0",
+]
+[tool.hatch.envs.types.scripts]
+check = "mypy --install-types --non-interactive {args:src/wsgi_auth_pam tests}"
+
+[tool.coverage.run]
+source_pkgs = ["wsgi_auth_pam", "tests"]
+branch = true
+parallel = true
+omit = [
+  "src/wsgi_auth_pam/__about__.py",
+]
+
+[tool.coverage.paths]
+wsgi_auth_pam = ["src/wsgi_auth_pam", "*/wsgi-auth-pam/src/wsgi_auth_pam"]
+tests = ["tests", "*/wsgi-auth-pam/tests"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]
