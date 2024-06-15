@@ -1,7 +1,7 @@
-# wsgi-auth-pam
+# wsgi-auth-middleware
 
-[![PyPI - Version](https://img.shields.io/pypi/v/wsgi-auth-pam.svg)](https://pypi.org/project/wsgi-auth-pam)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/wsgi-auth-pam.svg)](https://pypi.org/project/wsgi-auth-pam)
+[![PyPI - Version](https://img.shields.io/pypi/v/wsgi-auth-middleware.svg)](https://pypi.org/project/wsgi-auth-middleware)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/wsgi-auth-middleware.svg)](https://pypi.org/project/wsgi-auth-middleware)
 
 -----
 
@@ -13,9 +13,9 @@
 ## Installation
 
 ```console
-pip install wsgi-auth-pam
+pip install wsgi-auth-middleware
 ```
 
 ## License
 
-`wsgi-auth-pam` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
+`wsgi-auth-middleware` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.

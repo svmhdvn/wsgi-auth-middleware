@@ -3,12 +3,12 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "wsgi-auth-pam"
+name = "wsgi-auth-middleware"
 dynamic = ["version"]
 description = 'WSGI middleware using an HTTP authentication frontend with a PAM backend'
 readme = "README.md"
 requires-python = ">=3.8"
-license = "MIT"
+license = "ISC"
 keywords = []
 authors = [
   { name = "Siva Mahadevan", email = "me@svmhdvn.name" },
@@ -24,36 +24,49 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: CPython",
   "Programming Language :: Python :: Implementation :: PyPy",
 ]
-dependencies = [
+
+[project.optional-dependencies]
+gssapi = [
+  "gssapi >= 1.8.3"
+]
+pam = [
   "python-pam >= 2.0.2"
 ]
 
 [project.urls]
-Documentation = "https://github.com/svmhdvn/wsgi-auth-pam#readme"
-Issues = "https://github.com/svmhdvn/wsgi-auth-pam/issues"
-Source = "https://github.com/svmhdvn/wsgi-auth-pam"
+Documentation = "https://github.com/svmhdvn/wsgi-auth-middleware#readme"
+Issues = "https://github.com/svmhdvn/wsgi-auth-middleware/issues"
+Source = "https://github.com/svmhdvn/wsgi-auth-middleware"
 
 [tool.hatch.version]
-path = "src/wsgi_auth_pam/__about__.py"
+path = "src/wsgi_auth_middleware/__about__.py"
+
+[tool.hatch.envs.hatch-test]
+extra-dependencies = [
+  "k5test",
+  "requests",
+  "requests-gssapi",
+  "wsgi-intercept",
+]
 
 [tool.hatch.envs.types]
 extra-dependencies = [
   "mypy>=1.0.0",
 ]
 [tool.hatch.envs.types.scripts]
-check = "mypy --install-types --non-interactive {args:src/wsgi_auth_pam tests}"
+check = "mypy --install-types --non-interactive {args:src/wsgi_auth_middleware tests}"
 
 [tool.coverage.run]
-source_pkgs = ["wsgi_auth_pam", "tests"]
+source_pkgs = ["wsgi_auth_middleware", "tests"]
 branch = true
 parallel = true
 omit = [
-  "src/wsgi_auth_pam/__about__.py",
+  "src/wsgi_auth_middleware/__about__.py",
 ]
 
 [tool.coverage.paths]
-wsgi_auth_pam = ["src/wsgi_auth_pam", "*/wsgi-auth-pam/src/wsgi_auth_pam"]
-tests = ["tests", "*/wsgi-auth-pam/tests"]
+wsgi_auth_middleware = ["src/wsgi_auth_middleware", "*/wsgi-auth-middleware/src/wsgi_auth_middleware"]
+tests = ["tests", "*/wsgi-auth-middleware/tests"]
 
 [tool.coverage.report]
 exclude_lines = [
