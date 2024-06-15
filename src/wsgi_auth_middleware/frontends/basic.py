@@ -2,8 +2,8 @@ import base64
 
 
 class BasicFrontend:
-    def __init__(self, auth_backends, realm="foo"):
-        self.auth_backends = auth_backends
+    def __init__(self, auth_backends=None, realm="foo"):
+        self.auth_backends = auth_backends or []
         self.realm = realm
 
     def __call__(self, scheme, data):

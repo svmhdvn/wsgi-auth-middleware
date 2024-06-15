@@ -8,13 +8,13 @@ dynamic = ["version"]
 description = 'WSGI middleware using an HTTP authentication frontend with a PAM backend'
 readme = "README.md"
 requires-python = ">=3.8"
-license = "ISC"
 keywords = []
 authors = [
   { name = "Siva Mahadevan", email = "me@svmhdvn.name" },
 ]
 classifiers = [
   "Development Status :: 4 - Beta",
+  "License :: OSI Approved :: ISC License (ISCL)",
   "Programming Language :: Python",
   "Programming Language :: Python :: 3.8",
   "Programming Language :: Python :: 3.9",

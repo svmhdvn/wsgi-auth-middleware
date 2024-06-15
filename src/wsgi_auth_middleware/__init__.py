@@ -4,9 +4,9 @@
 
 
 class HttpAuthWsgiMiddleware:
-    def __init__(self, app, auth_frontends):
+    def __init__(self, app, auth_frontends=None):
         self.app = app
-        self.auth_frontends = auth_frontends
+        self.auth_frontends = auth_frontends or []
 
     def __call__(self, environ, start_response):
         def repl_start_response(status, headers):

@@ -2,8 +2,8 @@ import base64
 
 
 class NegotiateFrontend:
-    def __init__(self, auth_backends):
-        self.auth_backends = auth_backends
+    def __init__(self, auth_backends=None):
+        self.auth_backends = auth_backends or []
 
     def __call__(self, scheme, data):
         if scheme.lower() != "negotiate":
