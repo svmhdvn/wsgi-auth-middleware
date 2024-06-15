@@ -5,10 +5,18 @@ build-backend = "hatchling.build"
 [project]
 name = "wsgi-auth-middleware"
 dynamic = ["version"]
-description = 'WSGI middleware using an HTTP authentication frontend with a PAM backend'
+description = "HTTP authentication WSGI middleware"
 readme = "README.md"
 requires-python = ">=3.8"
-keywords = []
+keywords = [
+  "GSSAPI",
+  "HTTP",
+  "PAM",
+  "WSGI",
+  "authentication",
+  "kerberos",
+  "middleware",
+]
 authors = [
   { name = "Siva Mahadevan", email = "me@svmhdvn.name" },
 ]
@@ -34,9 +42,12 @@ pam = [
 ]
 
 [project.urls]
-Documentation = "https://github.com/svmhdvn/wsgi-auth-middleware#readme"
-Issues = "https://github.com/svmhdvn/wsgi-auth-middleware/issues"
-Source = "https://github.com/svmhdvn/wsgi-auth-middleware"
+Bugs = "https://todo.sr.ht/~svmhdvn/wsgi-auth-middleware"
+Changelog = "https://git.sr.ht/~svmhdvn/wsgi-auth-middleware/refs"
+Documentation = "https://git.sr.ht/~svmhdvn/wsgi-auth-middleware/tree/main/item/README.md"
+Donate = "https://liberapay.com/svmhdvn"
+Homepage = "https://sr.ht/~svmhdvn/wsgi-auth-middleware/"
+Source = "https://git.sr.ht/~svmhdvn/wsgi-auth-middleware/"
 
 [tool.hatch.version]
 path = "src/wsgi_auth_middleware/__about__.py"

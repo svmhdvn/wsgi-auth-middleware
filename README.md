@@ -11,7 +11,7 @@
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Relevant Specifications](#relevant-specifications)
+- [Supported Specifications](#supported-specifications)
 - [License](#license)
 
 ## Installation
@@ -46,7 +46,7 @@ authenticated_app = HttpAuthWsgiMiddleware(
 )
 ```
 
-## Relevant Specifications
+## Supported Specifications
 
 ### Currently supported HTTP authentication schemes
 
