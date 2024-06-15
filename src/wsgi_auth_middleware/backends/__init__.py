@@ -1,9 +1,7 @@
-try:
-    from .pam import PamBackend
-except ImportError:
-    pass
+import contextlib
 
-try:
-    from .gssapi import GssapiBackend
-except ImportError:
-    pass
+with contextlib.suppress(ImportError):
+    from wsgi_auth_middleware.backends.pam import PamBackend as PamBackend
+
+with contextlib.suppress(ImportError):
+    from wsgi_auth_middleware.backends.gssapi import GssapiBackend as GssapiBackend

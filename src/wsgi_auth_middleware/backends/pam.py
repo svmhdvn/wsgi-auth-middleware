@@ -1,7 +1,8 @@
 import pam
 
+
 class PamBackend:
-    def __init__(self, service='login'):
+    def __init__(self, service="login"):
         self.service = service
         self.pam = pam.PamAuthenticator()
 
