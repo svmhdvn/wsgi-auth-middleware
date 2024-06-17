@@ -21,8 +21,8 @@ REALM = "EXAMPLE.ORG"
 HOSTNAME = REALM.lower()
 TEST_PORT = 8888
 TEST_URL = f"http://{HOSTNAME}:{TEST_PORT}/"
-USER1 = (f"user1@{REALM}", "pass1")
-USER2 = (f"user2@{REALM}", "pass2")
+USER1 = ("user1", "pass1")
+USER2 = ("user2", "pass2")
 HTTP_SERVICE = f"HTTP/{HOSTNAME}@{REALM}"
 
 
@@ -133,7 +133,7 @@ class BasicAppTestCase(k5test.KerberosTestCase):
         remove_wsgi_intercept()
 
         assert r.status_code == 200
-        assert r.content == f"Hello {USER1[0]}".encode()
+        assert r.content == f"Hello {USER1[0]}@{REALM}".encode()
 
     def test_unauthorized(self):
         """
@@ -186,4 +186,4 @@ class BasicAppTestCase(k5test.KerberosTestCase):
         remove_wsgi_intercept()
 
         assert r.status_code == 200
-        assert r.content == f"Hello {USER1[0]}".encode()
+        assert r.content == f"Hello {USER1[0]}@{REALM}".encode()
